@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html>
+  
+<head>
+  <title>Robo-MUTUAL</title>
+  
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="Robotic Multimodal Task Specification via Unimodal Learning">
+    <meta name="keywords" content="Robo-MUTUAL, Multimodal Task Specification, Embodied AI, AI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Robotic Multimodal Task Specification via Unimodal Learning</title>
+    <!-- <link rel="icon" href="./assets/icon.png"> -->
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/color.css">
+    <link rel="stylesheet" href="./assets/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./assets/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./assets/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <script defer src="./assets/js/fontawesome.all.min.js"></script>
+    
+</head>
+
+<body>
+  
+
+      
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+          
+        <div class="columns is-centered">
+          
+            <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title is-bold">
+                <!-- <img src="./assets/icon.png" style="width:1em;vertical-align: middle" alt="Logo"/>  -->
+                <span class="mmmu" style="vertical-align: middle">Robo-MUTUAL</span>
+                </h1>
+            <h2 class="subtitle is-3 publication-subtitle">
+                Robotic Multimodal Task Specification via Unimodal Learning
+                <!-- <br>
+                and Reasoning Benchmark for Expert AGI -->
+            </h2>
+            <div class="is-size-5 publication-authors">
+                <span class="author-block">Jianxiong Li* <sup>†</sup> <sup class="thu">1</sup>,</span>
+                <span class="author-block">Zhihao Wang* <sup class="pku">2</sup> <sup class="thu">1</sup>,</span>
+                <span class="author-block">Jinliang Zheng* <sup class="thu">1</sup> <sup class="sensetime">3</sup>,</span><br>
+                <span class="author-block">Xiaoai Zhou<sup class="uoft">4</sup> <sup class="thu">1</sup>,</span>
+                <span class="author-block">Guanming Wang<sup class="ucl">5</sup> <sup class="thu">1</sup>,</span>
+                <span class="author-block">Guanglu Song<sup class="sensetime">3</sup>,</span>
+                <span class="author-block">Yu Liu<sup class="sensetime">3</sup>,</span>
+                <span class="author-block">Jingjing Liu<sup class="thu">1</sup>,</span>
+                <span class="author-block">Ya-Qin Zhang<sup class="thu">1</sup>,</span><br>
+                <span class="author-block">Junzhi Yu<sup>✉</sup><sup class="pku">2</sup>,</span>
+                <span class="author-block">Xianyuan Zhan<sup>✉</sup> <sup class="thu">1</sup> <sup class="ailab">6</sup></span>
+                
+            </div>
+            <br>
+            <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup class="thu">1</sup>AIR, Tsinghua University</span>
+                <span class="author-block"><sup class="pku">2</sup>CoE, Peking University</span>
+                <span class="author-block"><sup class="sensetime">3</sup>SenseTime Research</span><br>
+                <span class="author-block"><sup class="uoft">4</sup>University of Toronto</span>
+                <span class="author-block"><sup class="ucl">5</sup>University College London</span>
+                <span class="author-block"><sup class="ailab">6</sup>Shanghai AI Lab</span>
+            </div>
+    
+            <br>
+            <div class="is-size-5 publication-authors">
+                <span class="author-block">*Equal contribution, </span><br>
+                <span class="author-block">†Project Lead:</span>
+                <span class="author-block"><a href="mailto:li-jx21@mails.tsinghua.edu.cn">li-jx21@mails.tsinghua.edu.cn</a></span><br>
+                <span class="author-block">✉Corresponding author:</span>
+                <span class="author-block"><a href="mailto:yujunzhi@pku.edu.cn">yujunzhi@pku.edu.cn</a></span> and
+                <span class="author-block"><a href="mailto:zhanxianyuan@air.tsinghua.edu.cn">zhanxianyuan@air.tsinghua.edu.cn</a></span>
+            </div>
+            
+            <br>
+            <style>
+              .accepted {
+                text-align: center;
+                color: #0a283d; /* Dark blue color */
+                font-size: 24px;
+                background-color: #e8f0fe79; /* Light blue background */
+                border: 1px solid #B6D4FE;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+            </style>
+            <div class="accepted">
+              <i class="fas fa-search" style="color: #28A745;"></i>
+              Submitted to ICRA 2025
+            </div>
+    
+            <div class="column has-text-centered">
+                <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/"
+                      class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                  </a>
+              </span>
+                <!-- <span class="link-block">
+                    <a href="https://openreview.net/forum?id=j5JvZCaDM0"
+                        class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Openreview</span>
+                    </a>
+                </span> -->
+                <!-- <span class="link-block">
+                    <a href="https://cloud.tsinghua.edu.cn/d/0d2939f7f7234cf68f1d/"
+                        class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <p style="font-size:18px">🔗</p>
+                    </span>
+                    <span>Dataset</span>
+                    </a>
+                </span> -->
+                <span class="link-block">
+                    <a href="https://github.com/255isWhite/Robo_MUTUAL"
+                        class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span>
+
+                </div>
+    
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+<style>
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+    }
+</style>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <video id="matting-video" controls playsinline width="100%">
+            <source src="./assets/web/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          
+          <script>
+            // 获取视频元素
+            const video = document.getElementById('matting-video');
+            
+            // 确保视频初始是暂停的
+            video.pause();
+          
+            // 设置默认声音为打开
+            video.muted = false;
+          </script>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+    <div class="container" style="margin-bottom: 2vh;">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h1 class="title is-2">Abstract</h1>
+          
+          <div class="content has-text-justified">
+            <p>
+                <b>Multimodal task specification</b> is essential for enhanced robotic performance, where Cross-modality Alignment
+                enables the robot to holistically understand complex task
+                instructions. Directly annotating multimodal instructions for
+                model training proves impractical, due to the sparsity of
+                paired multimodal data. In this study, we demonstrate that
+                by leveraging unimodal instructions abundant in real data,
+                we can effectively teach robots to learn multimodal task
+                specifications. First, we endow the robot with strong Cross-
+                modality Alignment capabilities, by <b>pretraining a robotic multimodal encoder using extensive out-of-domain data</b>. Then,
+                we employ two <b>Collapse</b> and <b>Corrupt</b> operations to further
+                bridge the remaining modality gap in the learned multimodal
+                representation. This approach projects different modalities of
+                identical task goal as interchangeable representations, thus
+                enabling accurate robotic operations within a well-aligned
+                multimodal latent space. Evaluation across more than <b>130 tasks</b>
+                and <b>4000 evaluations</b> on both simulated LIBERO benchmark
+                and real robot platforms showcases the superior capabilities of
+                our proposed framework, demonstrating significant advantage
+                in overcoming data constraints in robotic learning. 
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+<!-- <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+            <h1 class="title is-2">Transfer from Unimodal to Multimodal Goals</h1>
+          <div class="content has-text-justified">
+          <p>
+            We train Robo-MUTUAL constrained on dataset that only <b>visual/textual</b> goals are available, and evaluate the performance on <b>textual&visual</b> goals.
+        </p>
+        <div class="column">
+          <h2 style="text-align:left" class="title is-3">Results on Real Robots</h2>
+          <div class="content has-text-justified">
+          
+          <div class="content has-text-centered">
+            <img src="./assets/web/realrobo.png" alt="algebraic reasoning" class="center">
+            <p><b><i>Figure 1:</i></b> Real robot LCBC experimental results. Success rate is averaged over 10 episodes and 3 seeds.</p>
+          </div>
+
+
+            <div class="column">
+                <h3 style="text-align:left" class="title is-4">Put duck on green plate</h3>
+                <div class="content has-text-justified">
+                </div>
+                <p style="text-align: center;">
+                    <span class="googlered" style="font-size: 23px;">Visual</span> <i class="fas fa-arrow-right"></i> <span class="googleblue" style="font-size: 23px;">Textual</span>
+                </p>    
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                        <source src="./assets/web/duckgreenplate/1.mp4"
+                                type="video/mp4">
+                    </video>
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                        <source src="./assets/web/duckgreenplate/2.mp4"
+                                type="video/mp4">
+                    </video>
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                        <source src="./assets/web/duckgreenplate/3.mp4"
+                                type="video/mp4">
+                    </video>
+                <br>
+                <p style="text-align: center;">
+                    <span class="googleblue" style="font-size: 23px;">Textual</span> <i class="fas fa-arrow-right"></i> <span class="googlered" style="font-size: 23px;">Visual</span>
+                </p>    
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                        <source src="./assets/web/duckgreenplate/1.mp4"
+                                type="video/mp4">
+                    </video>
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                        <source src="./assets/web/duckgreenplate/2.mp4"
+                                type="video/mp4">
+                    </video>
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                        <source src="./assets/web/duckgreenplate/3.mp4"
+                                type="video/mp4">
+                    </video>
+                </div>
+
+
+            <div class="column">
+                <h3 style="text-align:left" class="title is-4">Duck duck in pot</h3>
+                <div class="content has-text-justified">
+                </div>
+                <p style="text-align: center;">
+                    <span class="googlered" style="font-size: 23px;">Visual</span> <i class="fas fa-arrow-right"></i> <span class="googleblue" style="font-size: 23px;">Textual</span>
+                </p>    
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/duckpot/1.mp4"
+                            type="video/mp4">
+                    </video>
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/duckpot/2.mp4"
+                            type="video/mp4">
+                    </video>
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/duckpot/3.mp4"
+                            type="video/mp4">
+                    </video>
+                    <p style="text-align: center;">
+                        <span class="googleblue" style="font-size: 23px;">Textual</span> <i class="fas fa-arrow-right"></i> <span class="googlered" style="font-size: 23px;">Visual</span>
+                    </p>
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/duckpot/1.mp4"
+                            type="video/mp4">
+                    </video>
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/duckpot/2.mp4"
+                            type="video/mp4">
+                    </video>
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/duckpot/3.mp4"
+                            type="video/mp4">
+                    </video>
+                </div>
+
+
+            <div class="column">
+                <h3 style="text-align:left" class="title is-4">Move pot from right to left</h3>
+                <div class="content has-text-justified">
+                </div>
+                <p style="text-align: center;">
+                    <span class="googlered" style="font-size: 23px;">Visual</span> <i class="fas fa-arrow-right"></i> <span class="googleblue" style="font-size: 23px;">Textual</span>
+                </p>   
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/movepot/1.mp4"
+                            type="video/mp4">
+                    </video>
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/movepot/2.mp4"
+                            type="video/mp4">
+                    </video>
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/movepot/3.mp4"
+                            type="video/mp4">
+                    </video>
+                <br>
+                <p style="text-align: center;">
+                    <span class="googleblue" style="font-size: 23px;">Textual</span> <i class="fas fa-arrow-right"></i> <span class="googlered" style="font-size: 23px;">Visual</span>
+                </p>
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/movepot/1.mp4"
+                            type="video/mp4">
+                    </video>
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/movepot/2.mp4"
+                            type="video/mp4">
+                    </video>
+                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/movepot/3.mp4"
+                            type="video/mp4">
+                    </video>    
+                </div>
+
+
+            <div class="column">
+            <h3 style="text-align:left" class="title is-4">Put red cup on red plate</h3>
+            <div class="content has-text-justified">
+            </div>
+            <p style="text-align: center;">
+                <span class="googlered" style="font-size: 23px;">Visual</span> <i class="fas fa-arrow-right"></i> <span class="googleblue" style="font-size: 23px;">Textual</span>
+            </p>    
+                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                <source src="./assets/web/redcupredplate/1.mp4"
+                        type="video/mp4">
+                </video>
+                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                <source src="./assets/web/redcupredplate/2.mp4"
+                        type="video/mp4">
+                </video>
+                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                <source src="./assets/web/redcupredplate/3.mp4"
+                        type="video/mp4">
+                </video>
+                <br>
+                <p style="text-align: center;">
+                    <span class="googleblue" style="font-size: 23px;">Textual</span> <i class="fas fa-arrow-right"></i> <span class="googlered" style="font-size: 23px;">Visual</span>
+                </p>
+                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                <source src="./assets/web/redcupredplate/1.mp4"
+                        type="video/mp4">
+                </video>
+                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                <source src="./assets/web/redcupredplate/2.mp4"
+                        type="video/mp4">
+                </video>
+                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                <source src="./assets/web/redcupredplate/3.mp4"
+                        type="video/mp4">
+                </video>
+            </div>
+
+
+            <div class="column">
+                <h3 style="text-align:left" class="title is-4">Flip red cup upright</h3>
+                <div class="content has-text-justified">
+                </div>
+                <p style="text-align: center;">
+                    <span class="googlered" style="font-size: 23px;">Visual</span> <i class="fas fa-arrow-right"></i> <span class="googleblue" style="font-size: 23px;">Textual</span>
+                </p>    
+                  <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/flip/1.mp4"
+                            type="video/mp4">
+                  </video>
+                  <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/flip/2.mp4"
+                            type="video/mp4">
+                  </video>
+                  <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/flip/3.mp4"
+                            type="video/mp4">
+                  </video>
+                  <br>
+                  <p style="text-align: center;">
+                      <span class="googleblue" style="font-size: 23px;">Textual</span> <i class="fas fa-arrow-right"></i> <span class="googlered" style="font-size: 23px;">Visual</span>
+                  </p>
+                  <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/flip/1.mp4"
+                            type="video/mp4">
+                  </video>
+                  <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/flip/2.mp4"
+                            type="video/mp4">
+                  </video>
+                  <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/flip/3.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+
+                
+            <div class="column">
+                <h3 style="text-align:left" class="title is-4">Fold cloth from right to left</h3>
+                <div class="content has-text-justified">
+                </div>
+                <p style="text-align: center;">
+                    <span class="googlered" style="font-size: 23px;">Visual</span> <i class="fas fa-arrow-right"></i> <span class="googleblue" style="font-size: 23px;">Textual</span>
+                </p>    
+                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/foldcloth/1.mp4"
+                            type="video/mp4">
+                </video>
+                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/foldcloth/2.mp4"
+                            type="video/mp4">
+                </video>
+                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/foldcloth/3.mp4"
+                            type="video/mp4">
+                </video>
+                <br>
+                <p style="text-align: center;">
+                    <span class="googleblue" style="font-size: 23px;">Textual</span> <i class="fas fa-arrow-right"></i> <span class="googlered" style="font-size: 23px;">Visual</span>
+                </p>
+                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/foldcloth/1.mp4"
+                            type="video/mp4">
+                </video>
+                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/foldcloth/2.mp4"
+                            type="video/mp4">
+                </video>
+                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/foldcloth/3.mp4"
+                            type="video/mp4">
+                </video>
+
+
+                </div>
+    
+
+
+
+
+
+        <div class="column">
+          <h2 style="text-align:left" class="title is-3">Results on Simulation</h2>
+        <div class="content has-text-justified">
+          <p>
+            We train Robo-MUTUAL on 130 tasks on LIBERO benchmark. 
+            Robo-MUTUAL achieves the highest success rate when evaluated with modality which doesn't appear in training dataset, 
+            demonstrating its effectiveness in achieving multimodal task specification via unimodal training.
+        </p>
+
+        <div class="content has-text-centered">
+          <img src="./assets/web/simulation.png" alt="algebraic reasoning" class="center">
+          <p><b><i>Figure 2:</i></b> Simulation LCBC results. Max success rate averaged over 25 evaluation episodes and 3 seeds.</p>
+        </div>
+
+          <img src="./assets/web/simulation/1.gif" alt="Image" style="width: 19%;">
+          <img src="./assets/web/simulation/2.gif" alt="Image" style="width: 19%;">
+          <img src="./assets/web/simulation/3.gif" alt="Image" style="width: 19%;">
+          <img src="./assets/web/simulation/4.gif" alt="Image" style="width: 19%;">
+          <img src="./assets/web/simulation/5.gif" alt="Image" style="width: 19%;">
+        </div>
+        </div>
+
+                  </div>
+                </div>
+        </div>
+        </div>
+      </div>
+</section>     -->
+
+
+
+
+<!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3 has-text-centered">BibTeX</h2>
+      <pre><code>
+        @inproceedings{lidecisionnce,
+          title={DecisionNCE: Embodied Multimodal Representations via Implicit Preference Learning},
+          author={Li, Jianxiong and Zheng, Jinliang and Zheng, Yinan and Mao, Liyuan and Hu, Xiao and Cheng, Sijie and Niu, Haoyi and Liu, Jihao and Liu, Yu and Liu, Jingjing and others},
+          booktitle={Forty-first International Conference on Machine Learning}
+        }
+  </code></pre>
+    </div>
+</section> -->
+  
+<footer class="footer">
+<!-- <div class="container"> -->
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+    <div class="column is-8">
+        <div class="content has-text-centered">
+        <p>
+            This website is website adapted from <a href="https://mmmu-benchmark.github.io/">MMMU</a>, licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
+        </div>
+    </div>
+    </div>
+<!-- </div> -->
+
+</footer>
+
+
+</body>

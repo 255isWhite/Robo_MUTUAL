@@ -1,0 +1,37 @@
+/* 清华大学 (Tsinghua University) - 清华紫 */
+.thu {
+    color: #722A8D; /* Tsinghua Purple */
+}
+
+/* 北京大学 (Peking University) - 北大红 */
+.pku {
+    color: #BD2A2E; /* Peking University Red */
+}
+
+/* 上海AI实验室 (Shanghai AI Lab) - 蓝色 */
+.ailab {
+    color: #1B75BB; /* Shanghai AI Lab Blue */
+}
+
+/* 旷视科技 (Sensetime) - 橙色 */
+.sensetime {
+    color: #FF6B00; /* Sensetime Orange */
+}
+
+/* 多伦多大学 (University of Toronto) - 蓝色 */
+.uoft {
+    color: #002A5C; /* University of Toronto Blue */
+}
+
+/* 伦敦大学学院 (University College London) - 黑色 */
+.ucl {
+    color: #221E1F; /* University College London Black */
+}
+
+.googlered {
+    color:  #f4433c; /* Google Red */
+}
+
+.googleblue {
+    color:  #2d85f0; /* Google Blue */
+}
