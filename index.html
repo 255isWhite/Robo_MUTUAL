@@ -531,25 +531,10 @@
           <img src="./assets/web/baseline.png" alt="algebraic reasoning" class="center" style="width: 100%;">
           <p><b><i>Figure 2:</i></b> Simulation experimental results. Success rate is averaged over 10 episodes and 3 seeds.</p>
         </div>
-
-        <section class="hero teaser">
-            <div class="container is-max-desktop">
-              <div class="hero-body">
-                  <video id="matting-video" controls playsinline width="100%" loop autoplay>
-                      <source src="./assets/web/simulation.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                    </video>
-                    
-                    <script>
-                      // 获取视频元素
-                      const video = document.getElementById('matting-video');
-                      
-                      // 设置默认声音为打开
-                      video.muted = true;
-                    </script>
-              </div>
-            </div>
-          </section>
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+            <source src="./assets/web/simulation.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
           <!-- <img src="./assets/web/simulation/1.gif" alt="Image" style="width: 19%;">
           <img src="./assets/web/simulation/2.gif" alt="Image" style="width: 19%;">
