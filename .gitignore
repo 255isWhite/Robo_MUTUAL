@@ -1,0 +1,10 @@
+__pycache__
+.vscode
+BearRobot.egg-info
+experiments
+data_jpg/
+*.json
+*.zip
+*.hdf5
+img.sh
+lang.sh
