@@ -1,0 +1,19 @@
+/* 移除默认的 margin 和 padding */
+section {
+    margin: 0;
+    padding: 0;
+  }
+  
+/* 调整两个 section 之间的空白 */
+.hero {
+  margin-bottom: 1px; /* 缩小与下一个 section 的空白 */
+}
+
+/* 调整两个 section 之间的空白 */
+.teaser {
+  margin-bottom: 1px; /* 缩小与下一个 section 的空白 */
+}
+
+.another-section {
+  margin-top: 10px; /* 缩小与上一个 section 的空白 */
+}

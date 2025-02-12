@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
     <link rel="stylesheet" href="./assets/css/color.css">
+    <link rel="stylesheet" href="./assets/css/custom.css">
     <link rel="stylesheet" href="./assets/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="./assets/css/bulma-slider.min.css">
@@ -35,7 +36,6 @@
 <body>
   
 
-      
 <section class="hero">
     <div class="hero-body">
         <div class="container is-max-desktop">
@@ -97,16 +97,20 @@
                 border-radius: 10px;
                 padding: 20px;
                 box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                margin: 0 auto;
+                width: 60%;
+                height: fit-content;
             }
             </style>
-            <!-- <div class="accepted">
-              <i class="fas fa-search" style="color: #28A745;"></i>
-            </div> -->
-    
-            <!-- <div class="column has-text-centered">
+            <div class="accepted">
+                <b>Accepted by</b>
+                <img src="assets/web/icra2025_clean.png" style="width: 60%; height: 100%; vertical-align: middle;">
+            </div>
+            <br>
+            <div class="column has-text-centered">
                 <div class="publication-links">
                 <span class="link-block">
-                  <a href="https://arxiv.org/"
+                  <a href="https://arxiv.org/abs/2410.01529"
                       class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -122,7 +126,7 @@
                 </span>
                 <span>Code</span>
                 </a>
-            </span> -->
+            </span>
 
             </div>
     
@@ -132,36 +136,84 @@
         </div>
     </div>
 </section>
-<style>
-    .center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 80%;
-    }
-</style>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-        <video id="matting-video" controls playsinline width="100%">
-            <source src="./assets/web/video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          
-          <script>
-            // 获取视频元素
-            const video = document.getElementById('matting-video');
+<section class="teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+          <!-- 添加一个包裹视频的容器 -->
+          <div class="video-container">
+              <video id="matting-video" controls playsinline width="100%">
+                  <source src="./assets/web/video.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+          </div>
             
-            // 确保视频初始是暂停的
-            video.pause();
-          
-            // 设置默认声音为打开
-            video.muted = false;
+          <script>
+              // 获取视频元素
+              const video = document.getElementById('matting-video');
+              
+              // 确保视频初始是暂停的
+              video.pause();
+            
+              // 设置默认声音为打开
+              video.muted = false;
           </script>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+  
+  <style>
+    /* 移除默认的 margin 和 padding */
+    section {
+      margin: 0;
+      padding: 0;
+    }
+  
+    /* 调整 .hero 和 .teaser 之间的空白 */
+    .hero {
+      margin-bottom: 40px; /* 缩小与下一个 section 的空白 */
+    }
+  
+    .teaser {
+      margin-top: 1px; /* 缩小与上一个 section 的空白 */
+    }
+
+    .hero-body, .container, .columns, .column {
+        margin-top: 0;
+        padding-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+  
+    /* Accepted by 部分的样式 */
+    .accepted {
+      text-align: center;
+      color: #0a283d;
+      font-size: 24px;
+      background-color: #e8f0fe79;
+      border: 1px solid #B6D4FE;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+      /* 为视频容器添加样式 */
+    .video-container {
+        border: 2px solid #66ccff; /* 边框宽度和颜色 */
+        border-radius: 30px; /* 边框圆角 */
+        overflow: hidden; /* 确保视频不会超出边框 */
+        display: inline-block; /* 使容器大小适应视频 */
+        margin-bottom: 10px; /* 调整视频和下方内容之间的空白 */
+        margin-top: 0px;
+    }
+
+    /* 确保视频宽度为100% */
+    #matting-video {
+        width: 100%;
+        display: block; /* 移除默认的inline-block间隙 */
+    }
+  </style>
+
 
 <section class="section">
     <div class="container" style="margin-bottom: 2vh;">
@@ -532,21 +584,35 @@
       </div>
 </section>    
 
+  
 
-
-
-<!-- <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title is-3 has-text-centered">BibTeX</h2>
+      <p>If you find our code or paper can help, please cite our paper as:</p>
       <pre><code>
-        @inproceedings{lidecisionnce,
-          title={DecisionNCE: Embodied Multimodal Representations via Implicit Preference Learning},
-          author={Li, Jianxiong and Zheng, Jinliang and Zheng, Yinan and Mao, Liyuan and Hu, Xiao and Cheng, Sijie and Niu, Haoyi and Liu, Jihao and Liu, Yu and Liu, Jingjing and others},
-          booktitle={Forty-first International Conference on Machine Learning}
-        }
+@article{li2024robo,
+    title={Robo-MUTUAL: Robotic Multimodal Task Specification via Unimodal Learning},
+    author={Li, Jianxiong and Wang, Zhihao and Zheng, Jinliang and Zhou, Xiaoai and Wang, Guanming and Song, Guanglu and Liu, Yu and Liu, Jingjing and Zhang, Ya-Qin and Yu, Junzhi and Zhan, Xianyuan},
+    journal={arXiv preprint arXiv:2410.01529},
+    year={2024}
+}
   </code></pre>
     </div>
-</section> -->
+</section>
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3 has-text-centered">Acknowledgement</h2>
+      <p>
+        Thanks to the great efforts of open-source community: 
+        <a href="https://github.com/Lifelong-Robot-Learning/LIBERO" target="_blank">LIBERO</a>, 
+        <a href="https://github.com/2toinf/DecisionNCE" target="_blank">DecisionNCE</a>, 
+        <a href="https://github.com/Facebear-ljx/BearRobot" target="_blank">BearRobot</a>.
+      </p>
+    </div>
+</section>
+
   
 <footer class="footer">
 <!-- <div class="container"> -->
@@ -556,9 +622,9 @@
     <div class="column is-8">
         <div class="content has-text-centered">
         <p>
-            This website is website adapted from <a href="https://mmmu-benchmark.github.io/">MMMU</a>, licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
+        This website is website adapted from <a href="https://mmmu-benchmark.github.io/">MMMU</a>, licensed under a <a rel="license"
+                                            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+        Commons Attribution-ShareAlike 4.0 International License</a>.
         </p>
         </div>
     </div>
