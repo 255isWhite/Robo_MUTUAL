@@ -41,6 +41,11 @@ For more details of method performance, you can visit our [project page](https:/
     conda create -n robo_mutual python=3.9 && conda activate robo_mutual
     git clone git@github.com:255isWhite/Robo_MUTUAL.git
     pip install -e . && pip install -r requirements.txt
+
+    # download ResNet34 pretrained weights from huggingface
+    git clone https://huggingface.co/timm/resnet34.a1_in1k
+    mv <downloaded_folder> models--timm--resnet34.a1_in1k
+    mv models--timm--resnet34.a1_in1k ~/.cache/huggingface/hub/
     ```
 
 2. Then install [LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO) and download all datasets.
