@@ -43,14 +43,16 @@ For more details of method performance, you can visit our [project page](https:/
     pip install -e . && pip install -r requirements.txt
 
     # download ResNet34 pretrained weights from huggingface
-    git clone https://huggingface.co/timm/resnet34.a1_in1k
-    mv <downloaded_folder> models--timm--resnet34.a1_in1k
+    git clone https://hf-mirror.com/timm/resnet34.a1_in1k # for Chinese mainland users
+    git clone https://huggingface.co/timm/resnet34.a1_in1k # for others
+
+    mv resnet34.a1_in1k models--timm--resnet34.a1_in1k
     mv models--timm--resnet34.a1_in1k ~/.cache/huggingface/hub/
     ```
 
 2. Then install [LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO) and download all datasets.
     ```bash
-    unzip <all_LIBERO_datasets_zip> -d Robo_MUTUAL/data/libero/
+    unzip <LIBERO_datasets_zip> -d Robo_MUTUAL/data/libero/
     cd Robo_MUTUAL/data/libero/data_process
     python hdf2jpg.py # this will convert hdf5 to jpg
     python jpg2json-ac.py # this will format a json file
@@ -59,7 +61,8 @@ For more details of method performance, you can visit our [project page](https:/
 3. Then set up [DecisionNCE](https://github.com/2toinf/DecisionNCE) without downloading original checkpoints. Instead, please download [this version](https://drive.google.com/file/d/1_bvhXUzWYWhg7bUANhDRB9Zq09wKcjB1/view?usp=drive_link).
     ```bash
     mkdir -p ~/.cache/DecisionNCE
-    mv <above_downloaded_ckpt> ~/.cache/DecisionNCE
+    mv <above_downloaded_ckpt> DecisionNCE-T
+    mv DecisionNCE-T ~/.cache/DecisionNCE
     ```
 
 3. We provide basic scripts of training and evaluation for <b>LIBERO-GOAL</b>, for training with <b>language_goal</b>
