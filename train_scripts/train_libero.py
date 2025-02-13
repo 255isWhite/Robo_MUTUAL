@@ -9,7 +9,7 @@ from BearRobot.Net.my_model.diffusion_model import VisualDiffusion
 from BearRobot.Agent.ddpm_bc import VLDDPM_BC
 
 from BearRobot.utils.dataset.dataloader_libero import RT1DataLoader, RT1ValDataLoader, AIRKitchenDataLoader, AIRKitchenValDataLoader
-from BearRobot.utils.logger.tb_log import TensorBoardLogger as Logger
+from BearRobot.utils.logger.wandb_log import WandbLogger as Logger
 from BearRobot.utils.net.initialization import boolean
 from BearRobot.utils import ddp
 from BearRobot.utils.evaluation.mp_libero_eval import LIBEROEval

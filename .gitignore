@@ -8,3 +8,4 @@ data_jpg/
 *.hdf5
 img.sh
 lang.sh
+eval.sh

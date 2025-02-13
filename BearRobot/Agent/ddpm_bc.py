@@ -335,12 +335,12 @@ class VLDDPM_BC(DDPM_BC):
                      mm_encoder = DecisionNCE_encoder(text_encoder, device=device)
                      self.lang_encoder = DecisionNCE_lang(mm_encoder)
               elif text_encoder == "DecisionNCE-V":
-                     text_encoder = 'r50_frozen_7800ep'
+                     text_encoder = 'DecisionNCE-T'
                      mm_encoder = DecisionNCE_encoder(text_encoder, device=device)
                      self.frame_diff_encoder = DecisionNCE_visual_diff(mm_encoder)
                      self.lang_encoder = DecisionNCE_visual_diff(mm_encoder)
               elif text_encoder == "CUT":
-                     text_encoder = 'r50_frozen_7800ep'
+                     text_encoder = 'DecisionNCE-T'
                      mm_encoder = DecisionNCE_encoder(text_encoder, device=device)
                      self.frame_diff_encoder = DecisionNCE_visual_diff(mm_encoder)
                      self.lang_encoder = DecisionNCE_visual_diff(mm_encoder)

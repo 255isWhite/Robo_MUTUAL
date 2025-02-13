@@ -123,9 +123,10 @@ class LIBEROEval(BaseEval):
               # eval with the beginning frame and the endding frame
               env_dict = {}
               transform = transforms.ToTensor()
-              base_dir='/data/libero/data_jpg/'
+              base_dir='data/libero/data_jpg/'
               env_dict['img_begin'] = transform(openimage(os.path.join(base_dir, demo_path, "image0/0.jpg")))
               end_idx = self.frame_length_dict[demo_path] - 1 
+              print(f"end_img path is {os.path.join(base_dir, demo_path, f'image0/{end_idx}.jpg')}")
               env_dict['img_end'] = transform(openimage(os.path.join(base_dir, demo_path, f"image0/{end_idx}.jpg")))
 
               # eval with the random frames
@@ -272,6 +273,7 @@ class LIBEROEval(BaseEval):
               """
               self._make_dir(save_path)
               self.step = steps
+              self.add_modality_info(img_goal)
               
               rews = []
               policy.eval()
@@ -283,6 +285,15 @@ class LIBEROEval(BaseEval):
               self._log_results(metrics, self.step)
               return eval_rewards
               
+       def add_modality_info(self, img_goal=False):
+           save_name = os.path.join(self.base_dir, 'results.json')
+           if img_goal:
+              metrics = {'Below evaluations with goal modality': 'Image'}
+           else:
+              metrics = {'Below evaluations with goal modality': 'Language'}
+           with open(save_name, 'a+') as f:
+                  line = json.dumps(metrics)
+                  f.write(line+'\n')
        
        def close_env(self):
               for env in self.env:

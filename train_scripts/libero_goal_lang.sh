@@ -1,7 +1,7 @@
 
 bs=64
 ws=2
-text_encoder=DecisionNCE-V
+text_encoder=DecisionNCE-V # fixed
 cuda=0
 
 export MUJOCO_GL="osmesa"
@@ -14,7 +14,7 @@ file_name=libero_goal_seed$seed
 
 torchrun --standalone --nnodes=1 --nproc_per_node=1 train_scripts/train_libero.py \
     --dataset_name 'libero_goal' \
-    --json_path <your json path> \
+    --json_path <your json path> \ 
     --algo_name 'robo_mutual' \
     --ddp False \
     --img_size 128 \

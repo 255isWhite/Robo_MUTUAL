@@ -9,7 +9,7 @@ data_names = ['libero_goal']
 for data_name in data_names:
     obs_keys = ['agentview_rgb', 'eye_in_hand_rgb', 'joint_states', 'gripper_states']
     base_dir = f'../{data_name}'
-    save_base_dir = f'../dataset/libero/data_jpg/{data_name}'
+    save_base_dir = f'../data_jpg/{data_name}'
     hdf5_path_list = os.listdir(base_dir)
 
     for hdf5_path in hdf5_path_list:

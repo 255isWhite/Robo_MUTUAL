@@ -1,8 +1,8 @@
 export CUDA_VISIBLE_DEVICES=0
 
-basic_path=<your ckpt path>
-task_suite_name=libero130
-json_path=/data/libero/$task_suite_name-ac.json
+basic_path= # your ckpt path
+task_suite_name=libero_goal
+json_path=data/libero/json_file/$task_suite_name-ac.json
 ckpt_name=latest.pth
 
 # Output debugging information
@@ -24,5 +24,5 @@ python eval/eval_libero.py \
     --task_suite_name $task_suite_name \
     --num_episodes 10 \
     --eval_horizon 300 \
-    --cross_modal True 
+    --img_goal True # whether to use image goal
 

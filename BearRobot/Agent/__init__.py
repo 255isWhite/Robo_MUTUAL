@@ -129,19 +129,16 @@ def build_visual_diffusion_mmpretrain(ckpt_path: str, statistics_path: str, wand
         return load_ckpt(agent, ckpt_path)
 
 
-def build_visual_diffsuion_c3(ckpt_path: str, statistics_path: str, cross_modal: bool=True , align_net: str=None, wandb_name: str=None, wandb_path: str=None):
+def build_visual_diffsuion_c3(ckpt_path: str, statistics_path: str, img_goal: bool=True , wandb_name: str=None, wandb_path: str=None):
         kwargs = wandb_yaml2dict(ckpt_path, wandb_name, wandb_path=wandb_path)
         kwargs['device'] = 'cuda:0'
-        if cross_modal and kwargs['add_noise'] and not kwargs['minus_mean']:
-                kwargs['minus_mean'] = True
-                kwargs['lang_fit_img'] = True
+        print(f"keys in kwargs: {kwargs.keys()}")
+
         model = VisualDiffusion(view_num=2,
                                 output_dim=7 * kwargs['ac_num'],
                                 **kwargs).to(0)
         agent = VLDDPM_BC(model, **kwargs)
-        # agent.align_net = AlignNet(1024).to('cuda:0')
-        # agent.align_net.load_state_dict(torch.load(align_net, map_location='cuda:0'))
-        # agent.align_net.eval() 
+
         agent.get_statistics(statistics_path)
         agent.get_transform(kwargs['img_size'])
         return load_ckpt(agent, ckpt_path)
